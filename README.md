@@ -2,6 +2,7 @@
 
 If you have used log4j before, switching to logback will be smooth. 
 All you need to do are:
+
 * Add logback-classic-0.9.29.jar, logback-core-0.9.29.jar and slf4japi-1.6.1.jar into the classpath;
 * Prepare a logback configuration file.  Othwise, the default logback configuration will be used;
 
