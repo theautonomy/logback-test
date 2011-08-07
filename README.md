@@ -37,7 +37,18 @@ All you need to do are:
 
 ## Examples 
 
-* com.test.logback.Test1.java - use the configuration file logback-test.xml found in class
+* com.test.logback.Test1.java - use the configuration file logback-test.xml found in classpath
 * com.test.logback.Test2.java - programmatically pass in configuration file location 
+
+
+## Notes
+
+* There are 5 log levels in logback and they are: TRACE, DEBUG, INFO, WARN and ERROR
+* Logger level - if a logger is assigned a level, it overrides it parents's level. If a 
+  logger is NOT assigned a level, it will inherit the first non-null level in its hierarchy.
+* Logger appender - the output of a log statement of logger L will go to all the appenders 
+  in L and its ancestors. However, if an ancestor of logger L, say P, has the additivity flag
+  set to false, then L's output will be directed to all the appenders in L and its ancestors 
+  up to and including P but not the appenders in any of the ancestors of P.
 
 
