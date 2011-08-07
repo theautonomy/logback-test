@@ -16,7 +16,9 @@ All you need to do are:
    </pre>
    
    Stay assured, logback allows you specify configuration file through as system property such as:
+   <pre>
     java -Dlogback.configurationFile=/path/to/config.xml ....
+   </pre>
     
    You can also load configuration file programmatically. 
    <pre>
