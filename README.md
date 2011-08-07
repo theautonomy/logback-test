@@ -39,19 +39,20 @@ All you need to do are:
 
 * com.test.logback.Test1.java - use the configuration file logback-test.xml found in classpath
 * com.test.logback.Test2.java - programmatically pass in configuration file location 
-* com.test.logback.Test3.java - automatically reload logger configuration file upon modification
+* com.test.logback.Test3.java - automatically reload logger configuration file upon modification.
   To try this example, you will run Test3 and modify the logback-test3.xml. Watch the log result.
 * com.test.logback.Test4.java - override ancestor's logger level but with logger appender additivity.
 * com.test.logback.Test5.java - override ancestor's logger level but without logger appender additivity.
+* com.test.logback.Test6.java - logback configuration file reference another properties file 
  
 
 
 ## Notes
 
 * There are 5 log levels in logback and they are: TRACE, DEBUG, INFO, WARN and ERROR
-* Logger level - if a logger is assigned a level, it overrides it ancestor's level. If a 
+* Logger level inheritance - if a logger is assigned a level, it overrides it ancestor's level. If a 
   logger is NOT assigned a level, it will inherit the first non-null level in its hierarchy.
-* Logger appender - the output of a log statement of logger L will go to all the appenders 
+* Logger appenders are cumulative, meaning the output of a log statement of logger L will go to all the appenders 
   in L and its ancestors. However, if an ancestor of logger L, say P, has the additivity flag
   set to false, then L's output will be directed to all the appenders in L and its ancestors 
   up to and including P but not the appenders in any of the ancestors of P.
