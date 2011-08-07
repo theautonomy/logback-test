@@ -2,9 +2,10 @@
 
 If you have used log4j before, switching to logback will be smooth. 
 All you need to do are:
-1. Add logback-classic-0.9.29.jar, logback-core-0.9.29.jar and slf4japi-1.6.1.jar into the classpath;
-2. Prepare a logback configuration file.  Othwise, the default logback configuration will be used;
-   According to this [manual]{http://logback.qos.ch/manual/configuration.html},
+*. Add logback-classic-0.9.29.jar, logback-core-0.9.29.jar and slf4japi-1.6.1.jar into the classpath;
+*. Prepare a logback configuration file.  Othwise, the default logback configuration will be used;
+
+   According to this [manual](http://logback.qos.ch/manual/configuration.html),
    <pre>
     The initialization steps that logback follows to try to configure itself:
     Logback tries to find a file called logback.groovy in the classpath.
@@ -31,4 +32,9 @@ All you need to do are:
    </pre> 
 
 
-This project is a playground to try LogBack logging framework.
+## Examples 
+
+*. com.test.logback.Test1.java - use the configuration file logback-test.xml found in class;
+*. com.test.logback.Test2.java - programmatically pass in configuration file location 
+
+
