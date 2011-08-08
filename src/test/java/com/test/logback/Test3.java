@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 public class Test3 {
 
-	final static Logger logger = LoggerFactory.getLogger(SLF4jConfigUtil.class);
+	final static Logger logger = LoggerFactory.getLogger(Test3.class);
 
 	public static void main(String[] args) throws InterruptedException {
 
