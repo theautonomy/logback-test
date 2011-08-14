@@ -70,6 +70,16 @@ There are many built-in appenders provided by logback;
 * SiftingAppender
 * Your own appender (by subclassing AppenderBase) 
 
+## Other
+
+* MDC
+  MDC (mapped diagnostic context) shines in a client-server environment.
+  It provides a way to stamp the logging event for each thread.
+  
+* Filters
+
+* JMX support  
+
 ## Examples 
 
 * com.test.logback.Test1.java - use the configuration file logback-test.xml found in classpath
