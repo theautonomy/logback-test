@@ -6,7 +6,22 @@ All you need to do is:
 * Add logback-classic-0.9.29.jar, logback-core-0.9.29.jar and slf4japi-1.6.1.jar into the classpath;
 * Prepare a logback configuration file.  Othwise, the default logback configuration will be used;
 
-   According to this [manual](http://logback.qos.ch/manual/configuration.html),
+
+## Notes
+
+* There are 5 log levels in logback: TRACE, DEBUG, INFO, WARN and ERROR
+
+* Logger level inheritance - if a logger is assigned a level, it overrides its ancestor's level. If a 
+  logger is NOT assigned a level, it will inherit the first non-null level in its hierarchy.
+  
+* Logger appenders are cumulative, meaning the output of a log statement of logger L will go to all the appenders 
+  in L and its ancestors. However, if an ancestor of logger L, say P, has the additivity flag
+  set to false, then L's output will be directed to all the appenders in L and its ancestors 
+  up to and including P but not the appenders in any of the ancestors of P.
+
+## Configuration
+
+This is how logback configure itself according to the official [manual](http://logback.qos.ch/manual/configuration.html),
    <pre>
     The initialization steps that logback follows to try to configure itself:
     Logback tries to find a file called logback.groovy in the classpath.
@@ -15,12 +30,12 @@ All you need to do is:
     If neither file is found, logback configures itself automatically using the BasicConfigurator which will cause logging output to be directed to the console.
    </pre>
    
-   Stay assured, logback allows you specify configuration file through as system property such as:
+Stay assured if you need some flexibility. Logback allows you specify configuration file through a system property such as:
    <pre>
     java -Dlogback.configurationFile=/path/to/config.xml ....
    </pre>
     
-   You can also load configuration file programmatically. 
+You can also load configuration file programmatically. 
    <pre>
   	    LoggerContext lc = (LoggerContext)LoggerFactory.getILoggerFactory();
 		JoranConfigurator config = new JoranConfigurator();
@@ -34,6 +49,12 @@ All you need to do is:
 		logger.debug("test pass config file"); 
    </pre> 
 
+
+Logback provides some nice features for configuration, which includes:
+
+* Reload logback configuration file upon modification automatically
+* Allow insertion of properties into context and be available in all logging events
+* Process configuration file conditionally
 
 ## Examples 
 
@@ -51,17 +72,5 @@ All you need to do is:
 * com.test.logback.Test6.java - logback configuration file reference another properties file 
  
 
-
-## Notes
-
-* There are 5 log levels in logback and they are: TRACE, DEBUG, INFO, WARN and ERROR
-
-* Logger level inheritance - if a logger is assigned a level, it overrides its ancestor's level. If a 
-  logger is NOT assigned a level, it will inherit the first non-null level in its hierarchy.
-  
-* Logger appenders are cumulative, meaning the output of a log statement of logger L will go to all the appenders 
-  in L and its ancestors. However, if an ancestor of logger L, say P, has the additivity flag
-  set to false, then L's output will be directed to all the appenders in L and its ancestors 
-  up to and including P but not the appenders in any of the ancestors of P.
 
 
