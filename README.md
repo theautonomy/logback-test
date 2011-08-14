@@ -56,6 +56,20 @@ Logback provides some nice features for configuration, which includes:
 * Allow insertion of properties into context and be available in all logging events
 * Process configuration file conditionally
 
+## Appenders
+
+In logback, an appender write the logging event.
+There are many built-in appenders provided by logback;
+* ConsoleAppender
+* FileAppender
+   RollingFileAppender
+* SocketAppender
+* SMTPAppender
+* DBAppender
+* SyslogAppender
+* SiftingAppender
+* Your own appender (by subclassing AppenderBase) 
+
 ## Examples 
 
 * com.test.logback.Test1.java - use the configuration file logback-test.xml found in classpath
@@ -70,6 +84,8 @@ Logback provides some nice features for configuration, which includes:
 * com.test.logback.Test5.java - override ancestor's logger level but without logger appender additivity.
 
 * com.test.logback.Test6.java - logback configuration file reference another properties file 
+
+* com.test.logback.Test8.java - MDC example 
  
 
 
