@@ -42,8 +42,8 @@ class Test8Thread  implements Runnable {
 	
 	public void run() {
 		MDC.put("id", id);
-		logger.debug("Enter the thread run method");
-		logger.debug("Do something in the thread run method");
+		logger.info("Enter the thread run method");
+		logger.info("Do something in the thread run method");
 		try {
 			int i = new Random().nextInt(100);
 			if (i % 2 == 0) {
@@ -54,7 +54,7 @@ class Test8Thread  implements Runnable {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		logger.debug("Exit  the thread run method");
+		logger.info("Exit  the thread run method");
 		MDC.remove("id");
 	}
 }
