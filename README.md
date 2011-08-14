@@ -72,8 +72,7 @@ There are many built-in appenders provided by logback;
 
 ## Other
 
-* MDC
-  MDC (mapped diagnostic context) shines in a client-server environment.
+* MDC(mapped diagnostic context) shines in a client-server environment.
   It provides a way to stamp the logging event for each thread.
   
 * Filters
