@@ -58,19 +58,26 @@ Logback provides some nice features for configuration, which includes:
 
 ## Appenders
 
-In logback, an appender write the logging event.
-There are many built-in appenders provided by logback;
+In logback, an appender write the logging event. There are many built-in appenders provided by logback;
+
 * ConsoleAppender
+
 * FileAppender
    RollingFileAppender
+   
 * SocketAppender
+
 * SMTPAppender
+
 * DBAppender
+
 * SyslogAppender
+
 * SiftingAppender
+
 * Your own appender (by subclassing AppenderBase) 
 
-## Other
+## Others
 
 * MDC(mapped diagnostic context) shines in a client-server environment.
   It provides a way to stamp the logging event for each thread.
