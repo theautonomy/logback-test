@@ -1,5 +1,6 @@
 package com.test.logback;
 
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -7,7 +8,8 @@ public class Test9 {
 
 	final static Logger logger = LoggerFactory.getLogger(Test9.class);
 
-	public static void main(String[] args) throws InterruptedException {
+	@Test
+	public void testLog() {
 
 		SLF4jConfigUtil.configure("./src/main/resources/logback-test9.xml");
 

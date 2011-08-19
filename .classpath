@@ -5,6 +5,11 @@
   <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
   <classpathentry kind="output" path="target/classes"/>
   <classpathentry kind="var" path="M2_REPO/org/codehaus/janino/janino/2.5.16/janino-2.5.16.jar"/>
+  <classpathentry kind="var" path="M2_REPO/junit/junit/4.8.2/junit-4.8.2.jar" sourcepath="M2_REPO/junit/junit/4.8.2/junit-4.8.2-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/angela/.m2/repository/junit/junit/4.8.2/junit-4.8.2-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
   <classpathentry kind="var" path="M2_REPO/ch/qos/logback/logback-classic/0.9.29/logback-classic-0.9.29.jar" sourcepath="M2_REPO/ch/qos/logback/logback-classic/0.9.29/logback-classic-0.9.29-sources.jar">
     <attributes>
       <attribute value="jar:file:/C:/Users/angela/.m2/repository/ch/qos/logback/logback-classic/0.9.29/logback-classic-0.9.29-javadoc.jar!/" name="javadoc_location"/>

@@ -2,6 +2,7 @@ package com.test.logback;
 
 import java.io.File;
 
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +14,8 @@ public class Test2 {
 	
 	final static Logger logger = LoggerFactory.getLogger(Test2.class);
 	
-	public static void main(String[] args) {
+	@Test
+	public void testLog() { 
 		LoggerContext lc = (LoggerContext)LoggerFactory.getILoggerFactory();
 		JoranConfigurator config = new JoranConfigurator();
 		config.setContext(lc);
