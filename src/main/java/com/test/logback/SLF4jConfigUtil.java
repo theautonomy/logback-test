@@ -1,8 +1,8 @@
 package com.test.logback;
 
 import java.io.File;
+import java.io.InputStream;
 
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import ch.qos.logback.classic.LoggerContext;
@@ -22,4 +22,18 @@ public abstract class SLF4jConfigUtil {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void configureUsingClassPathResource(String loggerConigFile) {
+		LoggerContext lc = (LoggerContext)LoggerFactory.getILoggerFactory();
+		JoranConfigurator config = new JoranConfigurator();
+		config.setContext(lc);
+		lc.reset();
+		try {
+			InputStream is = ClassLoader.class.getResourceAsStream(loggerConigFile);
+			config.doConfigure(is);
+		} catch (JoranException e) {
+			e.printStackTrace();
+		}
+	}
+
 }
