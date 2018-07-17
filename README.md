@@ -18,7 +18,8 @@ All you need to do is:
   in L and its ancestors. However, if an ancestor of logger L, say P, has the additivity flag
   set to false, then L's output will be directed to all the appenders in L and its ancestors 
   up to and including P but not the appenders in any of the ancestors of P.
-
+
+
 ## Configuration
 
 This is how logback configure itself according to the official [manual](http://logback.qos.ch/manual/configuration.html),
@@ -101,7 +102,13 @@ In logback, an appender write the logging event. There are many built-in appende
 
 * com.test.logback.Test6.java - logback configuration file reference another properties file 
 
+* com.test.logback.Test7.java - jmxConfigurator
+
 * com.test.logback.Test8.java - MDC example 
+
+* com.test.logback.Test9.java - log message filter
+
+* com.test.logback.Test10.java - logback configuration per environment
  
 
 
