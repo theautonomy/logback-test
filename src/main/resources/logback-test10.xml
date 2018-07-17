@@ -1,0 +1,39 @@
+<configuration>
+
+	<if condition='property("ENV").equals("prod")'>
+		<then>
+			<!--  
+			<include resource="logback-prod.xml" />
+			<include file="./src/main/resources/logback-prod.xml" />
+			-->
+			
+			<include resource="logback-prod.xml" />
+			
+		</then>
+	</if>
+	<if condition='property("ENV").equals("dev")'>
+		<then>
+			<!-- <include file="./src/main/resources/logback-dev.xml" /> -->
+
+			<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+				<file>Test10-dev.log</file>
+
+				<encoder>
+					<pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+				</encoder>
+			</appender>
+
+			<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+				<encoder>
+					<pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+				</encoder>
+			</appender>
+
+			<root level="debug">
+				<appender-ref ref="FILE" />
+				<appender-ref ref="STDOUT" />
+			</root>
+		</then>
+	</if>
+
+</configuration>
